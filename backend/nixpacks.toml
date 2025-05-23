@@ -8,4 +8,4 @@ cmds = [
 ]
 
 [phases.start]
-cmds = ['python main.py']  # Change this to your actual entry point
+cmds = ['python aci.py']  # Change this to your actual entry point
