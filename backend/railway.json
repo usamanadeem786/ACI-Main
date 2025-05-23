@@ -5,7 +5,7 @@
       "phases": {
         "install": {
           "dependsOn": ["setup"],
-          "cmds": ["python3 -m pip install uv && uv sync --all-extras --no-install-project"]
+          "cmds": ["python3 install pip && pip install uv && uv sync --all-extras --no-install-project"]
         }
       }
     }
