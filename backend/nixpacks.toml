@@ -1,13 +1,12 @@
 [phases.setup]
-cmds = [
-  "python -m venv /opt/venv",
-  "/opt/venv/bin/pip install uv==0.4.30"
-]
+nixPkgs = ['python311', 'uv']
+cmds = ['python -m venv /app/venv']
 
 [phases.install]
 cmds = [
-  "/opt/venv/bin/uv sync --no-dev --frozen"
+  '/app/venv/bin/pip install uv==0.4.30',
+  '/app/venv/bin/uv sync --no-dev --frozen'
 ]
 
-[start]
-cmd = "/opt/venv/bin/python main.py"
+[phases.start]
+cmds = ['/app/venv/bin/python main.py']  # Replace with your app entrypoint
