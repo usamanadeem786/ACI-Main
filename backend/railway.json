@@ -6,7 +6,7 @@
       "phases": {
         "install": {
           "dependsOn": ["setup"],
-          "cmds": ["pip install uv && uv sync --all-extras --no-install-project"]
+          "cmds": ["python -m venv --copies /opt/venv && ./opt/venv/bin/activate && pip install uv==$NIXPACKS_UV_VERSION && uv sync --all-extras --dev --no-install-project"]
         }
       }
     }
