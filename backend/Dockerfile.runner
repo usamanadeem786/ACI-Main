@@ -1,0 +1,13 @@
+FROM python:3.12
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+WORKDIR /workdir
+
+COPY ./pyproject.toml ./uv.lock /workdir/
+
+RUN uv sync --all-extras --dev --no-install-project
+
+ENV PATH="/workdir/.venv/bin:$PATH"
+
+# Check if PYTHONPATH exists and append /workdir, otherwise set it to /workdir
+RUN if [ -z "$PYTHONPATH" ]; then export PYTHONPATH=/workdir; else export PYTHONPATH=/workdir:$PYTHONPATH; fi
