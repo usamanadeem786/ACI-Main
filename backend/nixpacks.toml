@@ -1,15 +1,13 @@
 [phases.setup]
 cmds = [
   "python -m venv /opt/venv",
-  ". /opt/venv/bin/activate",
-  "pip install uv==0.4.30"
+  "/opt/venv/bin/pip install uv==0.4.30"
 ]
 
 [phases.install]
 cmds = [
-  ". /opt/venv/bin/activate",
-  "uv sync --no-dev --frozen"
+  "/opt/venv/bin/uv sync --no-dev --frozen"
 ]
 
 [start]
-cmd = ". /opt/venv/bin/activate && python main.py"
+cmd = "/opt/venv/bin/python main.py"
