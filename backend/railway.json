@@ -1,11 +1,12 @@
 {
   "$schema": "https://railway.com/railway.schema.json",
   "build": {
+    "providers": ["python"]
     "nixpacksPlan": {
       "phases": {
         "install": {
           "dependsOn": ["setup"],
-          "cmds": ["python3 install pip && pip install uv && uv sync --all-extras --no-install-project"]
+          "cmds": ["pip install uv && uv sync --all-extras --no-install-project"]
         }
       }
     }
