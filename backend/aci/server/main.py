@@ -98,7 +98,7 @@ app.add_middleware(SessionMiddleware, secret_key=config.SIGNING_KEY)
 # )
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://integrations-next.up.railway.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
